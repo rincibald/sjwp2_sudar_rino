@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vjezba1</title>
+    <style>
+        table, td, th {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <h1>Christmas tree in SVG</h1>
@@ -12,6 +20,34 @@
         <polygon points="300,50 400,200 200,200" style="fill:green;"/> 
         <polygon points="300,150 425,300 175,300" style="fill:green;"  />
         <polygon points="300,250 450,400 150,400" style="fill:green;" />
+    </svg>
+    <br>
+    <h1>Tablice</h1>
+    <table>
+        <tr>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Razred</th>
+        </tr>
+        <tr>
+            <td>Rino</td>
+            <td>Sudar</td>
+            <td>4.B</td>
+        </tr>
+        <tr>
+            <td>Bojan</td>
+            <td>Kvakić</td>
+            <td>3.D</td>    
+    </table>
+    <h1>Forme</h1>
+    <form action="#" method="get">
+        <label for="ime">Ime</label>
+        <input type="text" id="ime" required> <br>
+        <label for="prezime">Prezime</label>
+        <input type="text" id="prezime" required> <br>
+        <input type="submit" value="Pošalji">
+    </form>
+
         
     
 </body>
