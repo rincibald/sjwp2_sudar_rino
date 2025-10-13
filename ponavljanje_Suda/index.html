@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skriptni jezici</title>
+</head>
+<style>
+    body {
+       background-color: #C2F8F7; 
+    }
+    h1 {
+        size: 2.5em;
+        font-weight: bold;
+    }
+    p {
+        margin: 8px;
+        color: rgb(96, 96, 96);
+    }
+    nav {
+        margin-top: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        padding: 20px 20px;
+        text-align: center;
+    }
+    nav a {
+        display: inline-block;
+        color: #007b8a;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 10px 24px;
+        margin: 0 8px;
+        border-radius: 4px;
+        
+    }
+    #button {
+        background-color: #C2F8F7;
+    } 
+    label, input {
+        width: 100%;
+        border-radius: 4px;
+    }
+</style>
+<body>
+    <nav>
+        <a href="#">Početna</a>
+        <a href="#">O nama</a>
+        <a href="#">Kontakt</a>
+    </nav>
+    <h1>HTML, CSS, Canvas i SVG</h1>
+    <p>Canvas je HTML5 element koji, pomoću JavaScript-a, omogućava dinamičko iscrtavanje <br>
+različitih oblika, dodavanje slika, kreiranje animacija na web stranici i sl. <br></p>
+<p>Na platnu (canvas-u) to ne radimo korištenjem novog jezika (kao što je to slučaj kod SVG) ili <br>
+korištenjem Flasha. Najčešće uporabe platna su:</p>
+<ul>
+    <li>crtanje grafova,</li>
+    <li>animiranje, igre i</li>
+    <li>kompozicija slike.</li>
+</ul>
+<hr>
+<p>SVG (Scalable Vector Graphics) grafika ne gubi kvalitetu prilikom zumiranja ili resize-a.</p>
+<p>Svi crteži mogu biti interaktivni i dinamički. Svaki element i atribut SVG datoteke može biti <br>
+animiran. Animacije mogu biti definirane i pokrenute interaktivno ili pomoću skripti.</p>
+<p>SVG integrira druge W3C standarde kao što su DOM, XSL …</p>
+<hr>
+<h3>Usporedba SVG-a i Canvasa</h3>
+<table  border="1">
+        <tr>
+            <th>SVG</th>
+            <th>HTML Canvas</th>
+            
+        </tr>
+        <tr>
+            <td>SVG ima bolju skalabilnost, tako da <br> može imati bolje slike sa velikom kva- <br> litetom na bilo kojoj rezoluciji</td>
+            <td>Canvas ima lošu skalabilnost. <br> Nije prikladan za rad s velikim <br> rezolucijama</td>
+        </tr>
+        <tr>
+            <td>SVG daje bolje performanse sa ma- <br>njim brojem objekata ili većom <br>površinom</td>
+            <td>canvas daje bolje performanse <br>za rad sa manjim površinama <br>ili većim brojem objekata</td>
+        </tr>
+        <tr>
+            <td>SVG se može modificirati uz pomoć <br>skripte i CSS-a</td>
+            <td>canvas se može modificirati <br>samo uz pomoć skripte</td>
+        </tr>
+        <tr>
+            <td>SVG je baziran na vektorima i sastav- <br>ljen je od oblika</td>
+            <td>Canvas je baziran na pixelima</td>
+        </tr>
+    </table>
+    <img src="zarulja.png" alt="slika" width="480" height="220">
+    <h2>Primjer SVG-a i Canvasa</h2>
+    <svg width="400" height="400" style="border:2px solid black; ">
+        <rect width="400" height="400" fill="lightgreen"></rect>
+        <rect width="200" height="200" fill="beige" x="100" y="150"></rect>
+        <rect width="200" height="50" fill="black" x="100" y="100"></rect>
+        <circle cx="150" cy="200" r="25" fill="white"></circle>
+        <circle cx="250" cy="200" r="25" fill="white"></circle>
+        <circle cx="150" cy="200" r="15" fill="green"></circle>
+        <circle cx="250" cy="200" r="15" fill="green"></circle>
+        <circle r="50" cx="200" cy="275" fill="pink"></circle>
+        <rect height="50" width="100" fill="beige" x="150" y="225"></rect>
+        <polygon fill="gray" points="200,240 180,250 220,250"></polygon>
+    </svg>
+    <canvas id="canvasFace" width="400" height="400" style="border:2px solid black;"></canvas>
+<script>
+        let c = document.getElementById("canvasFace");
+        let ctx = c.getContext("2d");
+
+ctx.fillStyle = "lightgreen";
+ctx.fillRect(0, 0, 400, 400);
+
+ctx.fillStyle = "beige";
+ctx.fillRect(100, 150, 200, 200);
+
+ctx.fillStyle = "black";
+ctx.fillRect(100, 100, 200, 50);
+
+ctx.beginPath();
+ctx.arc(150, 200, 25, 0, 2 * Math.PI);
+ctx.arc(250, 200, 25, 0, 2 * Math.PI);
+ctx.fillStyle = "white";
+ctx.fill();
+
+ctx.beginPath();
+ctx.arc(150, 200, 15, 0, 2 * Math.PI);
+ctx.arc(250, 200, 15, 0, 2 * Math.PI);
+ctx.fillStyle = "green";
+ctx.fill();
+
+ctx.beginPath();
+ctx.arc(200, 275, 50, 0, 2 * Math.PI);
+ctx.fillStyle = "pink";
+ctx.fill();
+
+ctx.fillStyle = "beige";
+ctx.fillRect(150, 225, 100, 50);
+
+ctx.beginPath();
+ctx.moveTo(200, 240);
+ctx.lineTo(180, 250);
+ctx.lineTo(220, 250);
+ctx.closePath();
+ctx.fillStyle = "gray";
+ctx.fill();
+</script>
+
+    <form action="#" method="get">
+        <label for="ime">Ime</label>
+        <input type="text" id="ime"> <br>
+        <label for="email">Email</label>
+        <input type="email" id="email"> <br>
+        <label for="poruka">Poruka</label>
+        <input type="text" id="poruka"> <br>
+        <input type="submit" value="Pošalji" id="button">
+    </form>
+</body>
+</html>
