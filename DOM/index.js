@@ -1,1 +1,1 @@
-document.query
+alert("JS radi");
