@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<title>Elektrotehnika – Kalkulator</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 20px; }
+h1 { margin-bottom: 30px; }
+h2 { margin-top: 30px; }
+.box { border: 1px solid #bbb; padding: 15px; margin-bottom: 20px; }
+label { display: block; margin-top: 6px; }
+input { width: 140px; }
+button { margin-top: 10px; }
+.result { margin-top: 10px; font-weight: bold; }
+</style>
+</head>
+<body>
+
+
+<h1>Elektrotehnički kalkulator</h1>
+
+
+<div class="box">
+<h2>Ohmov zakon</h2>
+<label>Otpor R (Ω): <input id="ohmR" type="number"></label>
+<label>Napon U (V): <input id="ohmU" type="number"></label>
+<button onclick="OhmovZakon()">Izračunaj struju</button>
+<div class="result" id="ohmI"></div>
+</div>
+
+
+<div class="box">
+<h2>Djelilo napona</h2>
+<label>R1 (Ω): <input id="r1" type="number"></label>
+<label>R2 (Ω): <input id="r2" type="number"></label>
+<label>Ulazni napon Uul (V): <input id="uin" type="number"></label>
+<button onclick="DjeliloNapona()">Izračunaj Uizl</button>
+<div class="result" id="uout"></div>
+</div>
+
+
+<div class="box">
+<h2>Otpornici - serijski </h2>
+<label>R1 (Ω): <input id="sr1" type="number"></label>
+<label>R2 (Ω): <input id="sr2" type="number"></label>
+<label>R3 (Ω): <input id="sr3" type="number"></label>
+<button onclick="OtporniciSer()">Izračunaj R</button>
+<div class="result" id="seriesR"></div>
+</div>
+
+
+<div class="box">
+<h2>Otpornici - paralelno </h2>
+<label>R1 (Ω): <input id="pr1" type="number"></label>
+<label>R2 (Ω): <input id="pr2" type="number"></label>
+<label>R3 (Ω): <input id="pr3" type="number"></label>
+<button onclick="OtporniciPar()">Izračunaj R</button>
+<div class="result" id="parallelR"></div>
+</div>
+
+
+<div class="box">
+<h2>Kondenzatori - serijski </h2>
+<label>C1 (F): <input id="sc1" type="number"></label>
+<label>C2 (F): <input id="sc2" type="number"></label>
+<label>C3 (F): <input id="sc3" type="number"></label>
+<button onclick="KondezatoriSer()">Izračunaj C</button>
+<div class="result" id="seriesC"></div>
+</div>
+
+
+<div class="box">
+<h2>Kondenzatori - paralelno </h2>
+<label>C1 (F): <input id="pc1" type="number"></label>
+<label>C2 (F): <input id="pc2" type="number"></label>
+<label>C3 (F): <input id="pc3" type="number"></label>
+<button onclick="KondezatoriPar()">Izračunaj C</button>
+<div class="result" id="parallelC"></div>
+</div>
+
+
+<div class="box">
+<h2>Zavojnice - serijski </h2>
+<label>L1 (H): <input id="sl1" type="number"></label>
+<label>L2 (H): <input id="sl2" type="number"></label>
+<label>L3 (H): <input id="sl3" type="number"></label>
+<button onclick="ZavojniceSer()">Izračunaj L</button>
+<div class="result" id="seriesL"></div>
+</div>
+
+
+<div class="box">
+<h2>Zavojnice - paralelno </h2>
+<label>L1 (H): <input id="pl1" type="number"></label>
+<label>L2 (H): <input id="pl2" type="number"></label>
+<label>L3 (H): <input id="pl3" type="number"></label>
+<button onclick="ZavojnicePar()">Izračunaj L</button>
+<div class="result" id="parallelL"></div>
+</div>
+
+
+<div class="box">
+  <h2>Induktivitet zračnog svitka</h2>
+  <label>Broj zavoja N: <input id="turns" type="number"></label>
+  <label>Površina S (m²): <input id="area" type="number"></label>
+  <label>Duljina l (m): <input id="coilLength" type="number"></label>
+  <button onclick="ZracniSvitak()">Izračunaj L</button>
+  <div class="result" id="airL"></div>
+</div>
+
+
+<div class="box">
+<h2>Računanje induktivnog otpora</h2>
+<p>X<sub>L</sub> = 2π · f · L</p>
+<label>Frekvencija f (Hz): <input id="freq" type="number"></label>
+<label>Induktivitet L (H): <input id="ind" type="number"></label>
+<button onclick="InduktivniOtpor()">Izračunaj X<sub>L</sub></button>
+<div class="result" id="xl"></div>
+</div>
+
+
+<div class="box">
+<h2>Računanje kapacitivnog otpora</h2>
+<p>X<sub>C</sub> = 1 / (2π · f · C)</p>
+<label>Frekvencija f (Hz): <input id="freqC" type="number"></label>
+<label>Kapacitet C (F): <input id="cap" type="number"></label>
+<button onclick="KapacitivniOtpor()">Izračunaj X<sub>C</sub></button>
+<div class="result" id="xc"></div>
+</div>
+</html>
+<script src="index.js"></script>
