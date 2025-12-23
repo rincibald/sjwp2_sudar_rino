@@ -4,14 +4,53 @@
 <meta charset="UTF-8">
 <title>Elektrotehnika – Kalkulator</title>
 <style>
-body { font-family: Arial, sans-serif; margin: 20px; }
-h1 { margin-bottom: 30px; }
-h2 { margin-top: 30px; }
-.box { border: 1px solid #bbb; padding: 15px; margin-bottom: 20px; }
-label { display: block; margin-top: 6px; }
-input { width: 140px; }
-button { margin-top: 10px; }
-.result { margin-top: 10px; font-weight: bold; }
+body { 
+  font-family: Arial, sans-serif; 
+  margin: 20px; 
+  background-color: #F7F4EF;
+  color: #1F2937;
+}
+h1 { 
+  margin-bottom: 30px;
+ }
+h2 { 
+  margin-top: 30px;
+  color: #F97316;
+ }
+.box {
+  border: 1px solid #bbb; 
+  padding: 15px; 
+  margin-bottom: 20px;
+  background-color: #FFFFFF;
+}
+label { 
+  display: block; margin-top: 6px;
+  color: #6B7280;
+ }
+input { 
+  width: 140px; 
+  border: 1px solid #E5E1DA;
+  border-radius: 8px;
+}
+input:focus {
+  border-color: #F97316;
+  box-shadow: 0 0 5px rgba(249, 115, 22, 0.5);
+}
+button { 
+  margin-top: 10px;
+  background-color: #F7F4EF;
+ }
+ button:hover{
+   background: #F97316;
+   }
+.result { 
+  margin-top: 10px; font-weight: bold;
+  color: #0F766E;
+ }
+.img {
+  margin-left: 400px;
+  margin-top: -150px;
+}
 </style>
 </head>
 <body>
@@ -22,90 +61,125 @@ button { margin-top: 10px; }
 
 <div class="box">
 <h2>Ohmov zakon</h2>
+<p>I = U / R</p>
 <label>Otpor R (Ω): <input id="ohmR" type="number"></label>
 <label>Napon U (V): <input id="ohmU" type="number"></label>
 <button onclick="OhmovZakon()">Izračunaj struju</button>
 <div class="result" id="ohmI"></div>
+<div class="img">
+  <img src="ohm.png" alt="Ohmov zakon" width="300px" height="auto">
 </div>
-
+</div>
 
 <div class="box">
 <h2>Djelilo napona</h2>
+<p>U<sub>izl</sub> = U<sub>ul</sub> · ( R<sub>2</sub> / (R<sub>1</sub> + R<sub>2</sub>) )</p>
 <label>R1 (Ω): <input id="r1" type="number"></label>
 <label>R2 (Ω): <input id="r2" type="number"></label>
 <label>Ulazni napon Uul (V): <input id="uin" type="number"></label>
 <button onclick="DjeliloNapona()">Izračunaj Uizl</button>
 <div class="result" id="uout"></div>
+<div class="img">
+  <img src="djelilo.png" alt="Djelilo napona" width="300px" height="auto">
+</div>
 </div>
 
 
 <div class="box">
 <h2>Otpornici - serijski </h2>
+<p>R = R<sub>1</sub> + R<sub>2</sub> + R<sub>3</sub></p>
 <label>R1 (Ω): <input id="sr1" type="number"></label>
 <label>R2 (Ω): <input id="sr2" type="number"></label>
 <label>R3 (Ω): <input id="sr3" type="number"></label>
 <button onclick="OtporniciSer()">Izračunaj R</button>
 <div class="result" id="seriesR"></div>
+<div class="img">
+  <img src="otporniciser.png" alt="Otpornici serijski" width="300px" height="auto">
+</div>
 </div>
 
 
 <div class="box">
 <h2>Otpornici - paralelno </h2>
+<p>1 / R = 1 / R<sub>1</sub> + 1 / R<sub>2</sub> + 1 / R<sub>3</sub></p>
 <label>R1 (Ω): <input id="pr1" type="number"></label>
 <label>R2 (Ω): <input id="pr2" type="number"></label>
 <label>R3 (Ω): <input id="pr3" type="number"></label>
 <button onclick="OtporniciPar()">Izračunaj R</button>
 <div class="result" id="parallelR"></div>
+<div class="img">
+  <img src="otpornicipar.png" alt="Otpornici paralelno" width="300px" height="auto">
+</div>
 </div>
 
 
 <div class="box">
 <h2>Kondenzatori - serijski </h2>
+<p>1 / C = 1 / C<sub>1</sub> + 1 / C<sub>2</sub> + 1 / C<sub>3</sub></p>
 <label>C1 (F): <input id="sc1" type="number"></label>
 <label>C2 (F): <input id="sc2" type="number"></label>
 <label>C3 (F): <input id="sc3" type="number"></label>
 <button onclick="KondezatoriSer()">Izračunaj C</button>
 <div class="result" id="seriesC"></div>
+<div class="img">
+  <img src="kondenser.png" alt="Kondenzatori serijski" width="300px" height="auto">
+</div>
 </div>
 
 
 <div class="box">
 <h2>Kondenzatori - paralelno </h2>
+<p>C = C<sub>1</sub> + C<sub>2</sub> + C<sub>3</sub></p>
 <label>C1 (F): <input id="pc1" type="number"></label>
 <label>C2 (F): <input id="pc2" type="number"></label>
 <label>C3 (F): <input id="pc3" type="number"></label>
 <button onclick="KondezatoriPar()">Izračunaj C</button>
 <div class="result" id="parallelC"></div>
+<div class="img">
+  <img src="kondenpar.png" alt="Kondenzatori paralelno" width="300px" height="auto">
+</div>
 </div>
 
 
 <div class="box">
 <h2>Zavojnice - serijski </h2>
+<p>L = L<sub>1</sub> + L<sub>2</sub> + L<sub>3</sub></p>
 <label>L1 (H): <input id="sl1" type="number"></label>
 <label>L2 (H): <input id="sl2" type="number"></label>
 <label>L3 (H): <input id="sl3" type="number"></label>
 <button onclick="ZavojniceSer()">Izračunaj L</button>
 <div class="result" id="seriesL"></div>
+<div class="img">
+  <img src="zavser.png" alt="Zavojnice serijski" width="300px" height="auto">
+</div>
 </div>
 
 
 <div class="box">
 <h2>Zavojnice - paralelno </h2>
+<p>1 / L = 1 / L<sub>1</sub> + 1 / L<sub>2</sub> + 1 / L<sub>3</sub></p>
 <label>L1 (H): <input id="pl1" type="number"></label>
 <label>L2 (H): <input id="pl2" type="number"></label>
 <label>L3 (H): <input id="pl3" type="number"></label>
 <button onclick="ZavojnicePar()">Izračunaj L</button>
 <div class="result" id="parallelL"></div>
+<div class="img">
+  <img src="zavpar.png" alt="Zavojnice paralelno" width="300px" height="auto">
+</div>
 </div>
 
 
 <div class="box">
   <h2>Induktivitet zračnog svitka</h2>
+  <p>L = μ<sub>0</sub> · ( N<sup>2</sup> · S / l )</p>
   <label>Broj zavoja N: <input id="turns" type="number"></label>
   <label>Površina S (m²): <input id="area" type="number"></label>
   <label>Duljina l (m): <input id="coilLength" type="number"></label>
   <button onclick="ZracniSvitak()">Izračunaj L</button>
   <div class="result" id="airL"></div>
+  <div class="img">
+  <img src="svitak.png" alt="Induktivitet zračnog svitka" width="300px" height="auto">
+</div>
 </div>
 
 
@@ -116,6 +190,9 @@ button { margin-top: 10px; }
 <label>Induktivitet L (H): <input id="ind" type="number"></label>
 <button onclick="InduktivniOtpor()">Izračunaj X<sub>L</sub></button>
 <div class="result" id="xl"></div>
+<div class="img">
+  <img src="indo.png" alt="Induktivni otpor" width="300px" height="auto">
+</div>
 </div>
 
 
@@ -126,6 +203,9 @@ button { margin-top: 10px; }
 <label>Kapacitet C (F): <input id="cap" type="number"></label>
 <button onclick="KapacitivniOtpor()">Izračunaj X<sub>C</sub></button>
 <div class="result" id="xc"></div>
+<div class="img">
+  <img src="kapo.png" alt="Kapacitivni otpor" width="300px" height="auto">
+</div>
 </div>
 </html>
 <script src="index.js"></script>

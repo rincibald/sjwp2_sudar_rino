@@ -83,16 +83,16 @@ function ZracniSvitak() {
 
 
 function InduktivniOtpor() {
-    const freq = parseFloat(document.getElementById("freq").value); // frekvencija u Hz
-    const L = parseFloat(document.getElementById("ind").value);     // induktivitet u H
+    const freq = parseFloat(document.getElementById("freq").value);
+    const L = parseFloat(document.getElementById("ind").value);
     const result = document.getElementById("xl");
     const XL = 2 * Math.PI * freq * L;
     result.innerText = "X_L= "+XL.toFixed(3)+"Ω";
 }
 
 function KapacitivniOtpor() {
-    const freq = parseFloat(document.getElementById("freqC").value); // frekvencija u Hz
-    const C = parseFloat(document.getElementById("cap").value);      // kapacitet u F
+    const freq = parseFloat(document.getElementById("freqC").value);
+    const C = parseFloat(document.getElementById("cap").value); 
     const result = document.getElementById("xc");
     const XC = 1 / (2 * Math.PI * freq * C);
     result.innerText = "X_C= "+XC.toFixed(3)+"Ω";
