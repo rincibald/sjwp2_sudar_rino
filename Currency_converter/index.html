@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #fff0e6;
+            font-family: cursive;
+            text-align: center;
+            padding: 50px;
+        }   
+        h1 {
+            color: #333;
+        }
+        #bitcoinInput {
+            width: 200px;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #333;
+            border-radius: 5px;
+        }
+        #btnConvert {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        div {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>CURRENCY CONVERTER</h1>
+    <div>
+        <p>BITCOIN:</p>
+    <input type="number" id="bitcoinInput">
+    </div>
+    <div>
+        <p>IN EURO:</p>
+        <p id="euroRez"></p>
+    </div>
+    <div>
+        <p>IN USD:</p>
+        <p id="dollarRez"></p>
+    </div>
+    <button id="btnConvert">CONVERT</button>
+    <script src="./index.js"></script>
+</body>
+</html>

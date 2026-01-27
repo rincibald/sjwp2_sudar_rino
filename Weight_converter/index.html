@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #e6f7ff;
+            font-family:cursive;
+            text-align: center;
+            padding: 50px;
+        }   
+        h1 {
+            color: #222;
+        }
+        #weightInput {
+            width: 200px;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #222;
+            border-radius: 5px;
+        }
+        #btnGo {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        div {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <h1>WEIGHT CONVERTER</h1>
+    <input type="number" id="weightInput" placeholder="kg">
+    <button id="btnGo">GO</button>
+    <div>
+        <p>Pounds:</p>
+        <p id="poundsRez"></p>
+    </div>
+    <div>
+        <p>Ounces:</p>
+        <p id="ouncesRez"></p>
+    </div>
+    <div>
+        <p>Grams:</p>
+        <p id="gramsRez"></p>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>

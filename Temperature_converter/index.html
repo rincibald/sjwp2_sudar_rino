@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #EAEFEF;
+            font-family: cursive;
+            text-align: center;
+            padding: 50px;
+        }   
+        h1 {
+            color: #FF9B51;
+        }
+        #celsiusInput {
+            width: 200px;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #BFC9D1;
+            border-radius: 5px;
+        }
+        #btnConvert {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        div {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #25343F;
+        }
+    </style>
+</head>
+<body>
+    <h1>TEMPERATURE CONVERSION</h1>
+    <div>
+        <p>CELSIUS:</p>
+        <input type="number" id="celsiusInput">
+    </div>
+    <div>
+        <p>IN FAHRENHEIT:</p>
+        <p id="fahrenheitRez"></p>
+    </div>
+    <div>
+        <p>IN KELVIN:</p>
+        <p id="kelvinRez"></p>
+    </div>
+    <button id="btnConvert">CONVERT</button>
+    <script src="./index.js"></script>
+</body>
+</html>
