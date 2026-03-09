@@ -1,0 +1,3 @@
+Duljina: 5
+Širina: 4
+Površina pravokutnika: 20
