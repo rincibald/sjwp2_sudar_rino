@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "random-color-name": "^1.0.3",
+    "randomcolor": "^0.6.2",
+    "starwars-names": "^1.6.0"
+  },
+  "name": "random-word-color",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
