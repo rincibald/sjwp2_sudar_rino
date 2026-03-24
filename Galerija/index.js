@@ -522,7 +522,6 @@ function filterItems(event, category) {
   });
 }
 
-// MODAL FUNCTIONS
 function openModal(item) {
   document.getElementById("modal").style.display = "block";
   document.getElementById("modal-img").src = item.image;
@@ -536,5 +535,4 @@ function closeModal() {
   document.getElementById("modal").style.display = "none";
 }
 
-// load on start
 filterItems({ target: document.querySelector(".filters button") }, "all");
